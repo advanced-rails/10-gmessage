@@ -5,6 +5,11 @@ class MessagesController < ApplicationController
     @received = @user.received_messages
   end
 
+  def sent
+    @received = @user.sent_messages
+    render 'index'
+  end
+
   def new
     @message = Message.new
   end
@@ -18,5 +23,15 @@ class MessagesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    msg = Message.find(params[:id])
+    msg.delete
+    redirect_to messages_path
+  end
+
+  def show
+    @message = Message.find(params[:id])
   end
 end

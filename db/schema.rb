@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170824204542) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "color", default: "#ffffff"
+    t.string "color", default: "#800080"
     t.string "photo", default: "http://via.placeholder.com/150x150"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

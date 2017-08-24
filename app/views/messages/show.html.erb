@@ -1,0 +1,9 @@
+<h1>Show</h1>
+
+<div style="height: 100px; width: 100px; border: 2px solid black;">
+  <%= image_tag @message.sender.photo, style: "height: 100px; width: 100px;" %>
+</div>
+
+<%= @message.sender.email %>
+<%= @message.subject %>
+<%= @message.body %>
