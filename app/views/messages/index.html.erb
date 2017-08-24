@@ -1,0 +1,22 @@
+<h1>Messages</h1>
+
+<%= link_to 'Compose', new_message_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @received.each do |m| %>
+      <tr>
+        <td><%= m.sender.email %></td>
+        <td><%= m.subject %></td>
+        <td><%= m.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
