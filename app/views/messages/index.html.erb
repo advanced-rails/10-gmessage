@@ -3,10 +3,12 @@
 <%= link_to 'Compose', new_message_path %>
 <%= link_to 'Inbox', messages_path %>
 <%= link_to 'Sent', sent_messages_path %>
+<%= link_to 'Favs', favorites_messages_path %>
 
 <table>
   <thead>
     <tr>
+      <th></th>
       <th></th>
       <th>From</th>
       <th>Subject</th>
@@ -17,6 +19,7 @@
     <% @received.each do |m| %>
       <tr style="color: <%= m.sender.color %>">
         <td><%= link_to 'x', m, method: :delete %></td>
+        <td><%= link_to m.is_fav ? '+' : '-', fav_message_path(m), method: :patch %></td>
         <td><%= m.sender.email %></td>
         <td><%= link_to m.subject, m %></td>
         <td><%= m.created_at %></td>

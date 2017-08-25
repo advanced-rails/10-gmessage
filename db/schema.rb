@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170824204542) do
     t.bigint "to_id", null: false
     t.string "subject", null: false
     t.text "body"
+    t.boolean "is_fav", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["from_id"], name: "index_messages_on_from_id"

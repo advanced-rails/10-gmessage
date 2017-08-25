@@ -10,6 +10,11 @@ class MessagesController < ApplicationController
     render 'index'
   end
 
+  def favorites
+    @received = @user.received_messages.where(is_fav: true)
+    render 'index'
+  end
+
   def new
     @message = Message.new
   end
@@ -33,5 +38,12 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+  end
+
+  def fav
+    msg = Message.find(params[:id])
+    msg.is_fav = !msg.is_fav
+    msg.save
+    redirect_to messages_path
   end
 end

@@ -15,7 +15,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  color                  :string           default("#ffffff")
+#  color                  :string           default("#800080")
 #  photo                  :string           default("http://via.placeholder.com/150x150")
 #
 

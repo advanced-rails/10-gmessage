@@ -7,6 +7,7 @@
 #  to_id      :integer          not null
 #  subject    :string           not null
 #  body       :text
+#  is_fav     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
